@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Customer table</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+			table, th, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			th, td {
+				padding: 5px;
+			}
+			th {
+				text-align: left;
+			}
+		</style>
+</head>
+<body>
+	<h1>Customers</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Registration code:</th>
+					<th>Full name:</th>
+					<th>Email:</th>
+					<th>Telephone:</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="customer : ${customers}">
+					<td th:text="${customer.registrationCode}">&nbsp;</td>
+					<td th:text="${customer.fullName}">&nbsp;</td>
+					<td th:text="${customer.email}">&nbsp;</td>
+					<td th:text="${customer.telephone}">&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+    <a href="/customer">Submit another message</a>
+</body>
+</html>
