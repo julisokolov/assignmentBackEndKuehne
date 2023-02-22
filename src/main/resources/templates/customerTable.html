@@ -1,41 +1,56 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <head> 
-    <title>Customer table</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<style>
-			table, th, td {
-				border: 1px solid black;
-				border-collapse: collapse;
-			}
-			th, td {
-				padding: 5px;
-			}
-			th {
-				text-align: left;
-			}
-		</style>
+	<title>Customer table</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 5px;
+		}
+		th {
+			text-align: left;
+		}
+		ul {
+			list-style-type: none;
+			margin-bottom: 25px;
+			padding: 0;
+		}
+
+		li {
+			display: inline;
+			margin-right: 15px;
+		}
+	</style>
 </head>
 <body>
-	<h1>Customers</h1>
-		<table>
-			<thead>
-				<tr>
-					<th>Registration code:</th>
-					<th>Full name:</th>
-					<th>Email:</th>
-					<th>Telephone:</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="customer : ${customers}">
-					<td th:text="${customer.registrationCode}">&nbsp;</td>
-					<td th:text="${customer.fullName}">&nbsp;</td>
-					<td th:text="${customer.email}">&nbsp;</td>
-					<td th:text="${customer.telephone}">&nbsp;</td>
-				</tr>
-			</tbody>
-		</table>
-    <a href="/customer">Submit another message</a>
+	<h1>Customer Table</h1>
+	<ul>
+		<li><a href="/customer">Create Customer</a></li>
+		<li><a href="/customer-table">Customer Table</a></li>
+		<li><a href="/product">Create Product</a></li>
+		<li><a href="/product-table">Product Table</a></li>
+	</ul>
+	<table>
+		<thead>
+			<tr>
+				<th>Registration code:</th>
+				<th>Full name:</th>
+				<th>Email:</th>
+				<th>Telephone:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="customer : ${customers}">
+				<td th:text="${customer.registrationCode}">&nbsp;</td>
+				<td th:text="${customer.fullName}">&nbsp;</td>
+				<td th:text="${customer.email}">&nbsp;</td>
+				<td th:text="${customer.telephone}">&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>

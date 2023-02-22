@@ -3,19 +3,37 @@
 <head> 
 	<title>Create Customer</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style>
+		ul {
+			list-style-type: none;
+			margin-bottom: 25px;
+			padding: 0;
+		}
+
+		li {
+			display: inline;
+			margin-right: 15px;
+		}
+	</style>
 </head>
 <body>
-	<h1>Form</h1>
-    <form action="#" th:action="@{/customer}" th:object="${customer}" method="post">
-			<table>
-				<tbody>
-					<tr><td>Registration code: </td><td><input type="text" th:field="*{registrationCode}" /></td></tr>
-					<tr><td>Full name: </td><td><input type="text" th:field="*{fullName}" /></td></tr>
-					<tr><td>Email: </td><td><input type="text" th:field="*{email}" /></td></tr>
-					<tr><td>Telephone:</td><td><input type="text" th:field="*{telephone}" /></td></tr>
-					<tr><td><input type="submit" value="Submit" /></td><td><input type="reset" value="Reset" /></td></tr>
-				</tbody>
-			</table>
-    </form>
+	<h1>Customer Form</h1>
+	<ul>
+		<li><a href="/customer">Create Customer</a></li>
+		<li><a href="/customer-table">Customer Table</a></li>
+		<li><a href="/product">Create Product</a></li>
+		<li><a href="/product-table">Product Table</a></li>
+	</ul>
+	<form action="#" th:action="@{/customer}" th:object="${customer}" method="post">
+		<table>
+			<tbody>
+				<tr><td>Registration code: </td><td><input type="text" th:field="*{registrationCode}" /></td></tr>
+				<tr><td>Full name: </td><td><input type="text" th:field="*{fullName}" /></td></tr>
+				<tr><td>Email: </td><td><input type="text" th:field="*{email}" /></td></tr>
+				<tr><td>Telephone:</td><td><input type="text" th:field="*{telephone}" /></td></tr>
+				<tr><td><input type="submit" value="Submit" /></td><td><input type="reset" value="Reset" /></td></tr>
+			</tbody>
+		</table>
+	</form>
 </body>
 </html>

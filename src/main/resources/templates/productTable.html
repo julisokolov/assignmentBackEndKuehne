@@ -14,26 +14,41 @@
 			th {
 				text-align: left;
 			}
+			ul {
+				list-style-type: none;
+				margin-bottom: 25px;
+				padding: 0;
+			}
+
+			li {
+				display: inline;
+				margin-right: 15px;
+			}
 		</style>
 </head>
 <body>
-	<h1>Products</h1>
-		<table>
-			<thead>
-				<tr>
-					<th>Product name:</th>
-					<th>SKU code:</th>
-					<th>Unit Price:</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="product : ${products}">
-					<td th:text="${product.name}">&nbsp;</td>
-					<td th:text="${product.skuCode}">&nbsp;</td>
-					<td th:text="${product.unitPrice}">&nbsp;</td>
-				</tr>
-			</tbody>
-		</table>
-    <a href="/product">Submit another message</a>
+	<h1>Product Table</h1>
+	<ul>
+		<li><a href="/customer">Create Customer</a></li>
+		<li><a href="/customer-table">Customer Table</a></li>
+		<li><a href="/product">Create Product</a></li>
+		<li><a href="/product-table">Product Table</a></li>
+	</ul>
+	<table>
+		<thead>
+			<tr>
+				<th>Product name:</th>
+				<th>SKU code:</th>
+				<th>Unit Price:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="product : ${products}">
+				<td th:text="${product.name}">&nbsp;</td>
+				<td th:text="${product.skuCode}">&nbsp;</td>
+				<td th:text="${product.unitPrice}">&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
