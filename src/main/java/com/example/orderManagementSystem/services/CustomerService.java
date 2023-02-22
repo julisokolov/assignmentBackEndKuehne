@@ -1,9 +1,12 @@
-package com.example.accessingdatajpa;
+package com.example.orderManagementSystem.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.example.orderManagementSystem.entities.Customer;
+import com.example.orderManagementSystem.repositories.CustomerRepository;
 
 @Component
 public class CustomerService {

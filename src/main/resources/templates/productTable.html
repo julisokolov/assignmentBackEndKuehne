@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Product table</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+			table, th, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			th, td {
+				padding: 5px;
+			}
+			th {
+				text-align: left;
+			}
+		</style>
+</head>
+<body>
+	<h1>Products</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Product name:</th>
+					<th>SKU code:</th>
+					<th>Unit Price:</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${products}">
+					<td th:text="${product.name}">&nbsp;</td>
+					<td th:text="${product.skuCode}">&nbsp;</td>
+					<td th:text="${product.unitPrice}">&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+    <a href="/product">Submit another message</a>
+</body>
+</html>
