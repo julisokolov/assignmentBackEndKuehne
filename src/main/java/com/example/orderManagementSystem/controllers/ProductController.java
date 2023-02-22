@@ -26,4 +26,10 @@ public class ProductController {
     model.addAttribute("products", service.getProducts());
     return "productTable";
   }
+
+	@GetMapping("/product-table")
+  public String productTable(Model model) {
+    model.addAttribute("products", service.getProducts());
+    return "productTable";
+  }
 }

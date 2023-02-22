@@ -26,4 +26,10 @@ public class CustomerController {
     model.addAttribute("customers", service.getCustomers());
     return "customerTable";
   }
+
+  @GetMapping("/customer-table")
+  public String customerTable(Model model) {
+    model.addAttribute("customers", service.getCustomers());
+    return "customerTable";
+  }
 }
